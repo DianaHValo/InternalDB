@@ -58,6 +58,7 @@ namespace InternalDB
                 PendingVacay.IsEnabled = true;
                 UserMng.IsEnabled = true;
                 LoginTab.IsEnabled = true;
+                DeleteUser.IsEnabled = true;
             }
             else if (userState == UserState.UserAuthenticated)
             {
@@ -65,6 +66,7 @@ namespace InternalDB
                 RequestLeave.IsEnabled = true;
                 PendingVacay.IsEnabled = false;
                 UserMng.IsEnabled = false;
+                DeleteUser.IsEnabled = false;
 
             }
             else
@@ -72,6 +74,7 @@ namespace InternalDB
                 RequestLeave.IsEnabled = false;
                 PendingVacay.IsEnabled =false;
                 UserMng.IsEnabled = false;
+                DeleteUser.IsEnabled = false;
                 LoginTab.IsEnabled = true;
             }
         }
@@ -103,7 +106,8 @@ namespace InternalDB
             LoginStackContent.Visibility = Visibility.Visible;
             RequestLeaveStackContent.Visibility = Visibility.Collapsed;
             PendingVacayStackContent.Visibility = Visibility.Collapsed;
-            UserMngStackContent.Visibility = Visibility.Collapsed; 
+            UserMngStackContent.Visibility = Visibility.Collapsed;
+            DeleteUserStackContent.Visibility = Visibility.Collapsed;
         }
 
         private void RequestLeave_Checked(object sender, RoutedEventArgs e)
@@ -112,6 +116,7 @@ namespace InternalDB
             RequestLeaveStackContent.Visibility = Visibility.Visible;
             PendingVacayStackContent.Visibility = Visibility.Collapsed;
             UserMngStackContent.Visibility = Visibility.Collapsed;
+            DeleteUserStackContent.Visibility = Visibility.Collapsed;
         }
 
         private void PendingVacay_Checked(object sender, RoutedEventArgs e)
@@ -120,6 +125,7 @@ namespace InternalDB
             RequestLeaveStackContent.Visibility = Visibility.Collapsed;
             PendingVacayStackContent.Visibility = Visibility.Visible;
             UserMngStackContent.Visibility = Visibility.Collapsed;
+            DeleteUserStackContent.Visibility = Visibility.Collapsed;
         }
 
         private void UserMng_Checked(object sender, RoutedEventArgs e)
@@ -128,7 +134,16 @@ namespace InternalDB
             RequestLeaveStackContent.Visibility = Visibility.Collapsed;
             PendingVacayStackContent.Visibility = Visibility.Collapsed;
             UserMngStackContent.Visibility = Visibility.Visible;
+            DeleteUserStackContent.Visibility = Visibility.Collapsed;
         }
 
+        private void DeleteUser_Checked(object sender, RoutedEventArgs e)
+        {
+            LoginStackContent.Visibility = Visibility.Collapsed;
+            RequestLeaveStackContent.Visibility = Visibility.Collapsed;
+            PendingVacayStackContent.Visibility = Visibility.Collapsed;
+            UserMngStackContent.Visibility = Visibility.Collapsed;
+            DeleteUserStackContent.Visibility = Visibility.Visible;
+        }
     }
 }
