@@ -33,10 +33,12 @@ namespace InternalDB
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            loginViewModel.Password = PasswordTxtBox.Password.ToString();
             loginViewModel.LoginCommand.Execute(null);
             var state = loginViewModel.UserState;
             EvaluateTabAccessibility(state);
             LoginCredentialsSetup(state);
+    
         }
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
@@ -44,6 +46,8 @@ namespace InternalDB
             LoginCredentialsSetup(loginViewModel.UserState);
             EvaluateTabAccessibility(loginViewModel.UserState);
             LoginCredentialsSetup(loginViewModel.UserState);
+            PasswordTxtBox.Password = string.Empty;
+           
         }
 
         private void EvaluateTabAccessibility(UserState userState)
@@ -58,6 +62,9 @@ namespace InternalDB
             else if (userState == UserState.UserAuthenticated)
             {
                 LoginTab.IsEnabled = true;
+                RequestLeave.IsEnabled = true;
+                PendingVacay.IsEnabled = false;
+                UserMng.IsEnabled = false;
 
             }
             else
@@ -91,6 +98,37 @@ namespace InternalDB
             }
         }
 
-     
+        private void LoginTab_Checked(object sender, RoutedEventArgs e)
+        {
+            LoginStackContent.Visibility = Visibility.Visible;
+            RequestLeaveStackContent.Visibility = Visibility.Collapsed;
+            PendingVacayStackContent.Visibility = Visibility.Collapsed;
+            UserMngStackContent.Visibility = Visibility.Collapsed; 
+        }
+
+        private void RequestLeave_Checked(object sender, RoutedEventArgs e)
+        {
+            LoginStackContent.Visibility = Visibility.Collapsed;
+            RequestLeaveStackContent.Visibility = Visibility.Visible;
+            PendingVacayStackContent.Visibility = Visibility.Collapsed;
+            UserMngStackContent.Visibility = Visibility.Collapsed;
+        }
+
+        private void PendingVacay_Checked(object sender, RoutedEventArgs e)
+        {
+            LoginStackContent.Visibility = Visibility.Collapsed;
+            RequestLeaveStackContent.Visibility = Visibility.Collapsed;
+            PendingVacayStackContent.Visibility = Visibility.Visible;
+            UserMngStackContent.Visibility = Visibility.Collapsed;
+        }
+
+        private void UserMng_Checked(object sender, RoutedEventArgs e)
+        {
+            LoginStackContent.Visibility = Visibility.Collapsed;
+            RequestLeaveStackContent.Visibility = Visibility.Collapsed;
+            PendingVacayStackContent.Visibility = Visibility.Collapsed;
+            UserMngStackContent.Visibility = Visibility.Visible;
+        }
+
     }
 }

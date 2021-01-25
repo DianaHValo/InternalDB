@@ -32,26 +32,44 @@ BorderThickness="1,1,1,0" CornerRadius="5,5,0,0" Padding="5">
                         </Style.Triggers>
                     </Style>
                 </StackPanel.Resources>
-                <RadioButton Name="LoginTab" Content="Login" />
-                <RadioButton Name="RequestLeave" Content="Request Leave" />
-                <RadioButton Name="PendingVacay" Content="Pending Vacation" />
-                <RadioButton Name="UserMng" Content="User Mng"/>
+                <RadioButton Name="LoginTab" Content="Login" Checked="LoginTab_Checked" />
+                <RadioButton Name="RequestLeave" Content="Request Leave" Checked="RequestLeave_Checked" />
+                <RadioButton Name="PendingVacay" Content="Pending Vacation" Checked="PendingVacay_Checked" />
+                <RadioButton Name="UserMng" Content="User Mng" Checked="UserMng_Checked"/>
+            </StackPanel>
+            
+            
+            <StackPanel x:Name="LoginStackContent" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" >
+                    <Label Name="UsernameLbl" Content="Username" Width="100" Margin="10" ></Label>
+                    <TextBox Name="UsernameTxtbox" Text="{Binding Username}" Width="100" Height="20" Margin="10"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Name="PasswordLbl" Content="Password" Width="100" Margin="10"></Label>
+                    <PasswordBox Name="PasswordTxtBox" Width="100" Height="20" Margin="10"></PasswordBox>
+                
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button  Name="LoginBtn" Content="Login" Width="70" Height="30" Margin="300,100,300,100" Click="LoginButton_Click"></Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button  Name="LogoutBtn" Content="Logout" Width="70" Height="30" Margin="300,-90,300,100" Click="LogoutButton_Click"></Button>
+                </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" >
-                <Label Name="UsernameLbl" Content="Username" Width="100" Margin="10" ></Label>
-                <TextBox Name="UsernameTxtbox" Text="{Binding Username}" Width="100" Height="20" Margin="10"></TextBox>
+            <StackPanel x:Name="RequestLeaveStackContent" Orientation="Horizontal">
+                <Label Content="request leave"></Label>
+                
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Name="PasswordLbl" Content="Password" Width="100" Margin="10"></Label>
-                <TextBox Name="PasswordTxtBox" Text="{Binding Password}" Width="100" Height="20" Margin="10"></TextBox>
+
+            <StackPanel x:Name="PendingVacayStackContent" Orientation="Horizontal">
+                <Label Content="pending"></Label>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Button  Name="LoginBtn" Content="Login" Width="70" Height="30" Margin="300,100,300,100" Click="LoginButton_Click"></Button>
+
+            <StackPanel x:Name="UserMngStackContent" Orientation="Horizontal">
+                <Label Content="user management"></Label>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Button  Name="LogoutBtn" Content="Logout" Width="70" Height="30" Margin="300,-90,300,100" Click="LogoutButton_Click"></Button>
-            </StackPanel>
+
         </StackPanel>
        
     </Grid>

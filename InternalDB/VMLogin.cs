@@ -35,7 +35,7 @@ namespace InternalDB
         {
             UserState = UserState.NotAuthenticated;
             Password = String.Empty;
-            RaisePropertyChange(nameof(Password));
+           
         }
 
         protected void RaisePropertyChange(string propertyName)
