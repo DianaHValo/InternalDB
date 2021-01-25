@@ -67,7 +67,60 @@ BorderThickness="1,1,1,0" CornerRadius="5,5,0,0" Padding="5">
             </StackPanel>
 
             <StackPanel x:Name="UserMngStackContent" Orientation="Horizontal">
-                <Label Content="user management"></Label>
+               
+                <StackPanel Orientation="Vertical" Margin="20">
+                    <StackPanel Orientation="Horizontal" >
+                    <Label Name="FirstNameLabel_UserMng" Content="FirstName" Width="120" Margin="5" ></Label>
+                    <TextBox Name="FirstnameTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" >
+                    <Label Name="LastNameLabel_UserMng" Content="LastName" Width="120" Margin="5" ></Label>
+                    <TextBox Name="LastnameTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" >
+                    <Label Name="AddressLabel_UserMng" Content="Address" Width="120" Margin="5" ></Label>
+                    <TextBox Name="AddressTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" >
+                    <Label Name="EmailLabel_UserMng" Content="Email" Width="120" Margin="5" ></Label>
+                    <TextBox Name="EmailTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" >
+                    <Label Name="PhoneLabel_UserMng" Content="Phone" Width="120" Margin="5" ></Label>
+                    <TextBox Name="PhoneTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" >
+                    <Label Name="VacationDaysLabel_UserMng" Content="VacationDays" Width="120" Margin="5" ></Label>
+                    <TextBox Name="VacationDaysTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="20">
+                    <StackPanel Orientation="Horizontal" >
+                        <Label Name="UsernameLabel_UserMng" Content="Username" Width="120" Margin="5" ></Label>
+                        <TextBox Name="UsernameTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" >
+                    <Label Name="PasswordLabel_UserMng" Content="Password" Width="120" Margin="5" ></Label>
+                        <TextBox Name="PasswordTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" >
+                        <Label Name="ConfirmPasswordLabel_UserMng" Content="Confirm Password" Width="120" Margin="5" ></Label>
+                        <TextBox Name="ConfirmPasswordTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="20">
+                        <Button Content="Add user" Width="70" Height="30" Margin="100,100,300,200"></Button>
+                    </StackPanel>
+                </StackPanel>
+                
             </StackPanel>
 
         </StackPanel>
