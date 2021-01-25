@@ -15,7 +15,7 @@ namespace InternalDB
 
         public static UserState AuthenticateUser(string username, string password)
         {
-            UserState state= UserState.AuthenticationFailed;
+            UserState state= UserState.NotAuthenticated;
 
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {

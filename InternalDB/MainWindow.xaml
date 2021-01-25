@@ -13,16 +13,44 @@
     </Window.DataContext>-->
     <Grid >
         <StackPanel Orientation="Vertical" Margin="30">
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <ControlTemplate x:Key="TabTemplate" TargetType="{x:Type RadioButton}">
+                        <Border BorderBrush="Black" Background="{TemplateBinding Background}" 
+BorderThickness="1,1,1,0" CornerRadius="5,5,0,0" Padding="5">
+                            <ContentPresenter Content="{TemplateBinding Content}" />
+                        </Border>
+                    </ControlTemplate>
+                    <Style TargetType="{x:Type RadioButton}">
+                        <Setter Property="Template" Value="{StaticResource TabTemplate}" />
+                        <Setter Property="Height" Value="26" />
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="LightGray" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <RadioButton Name="LoginTab" Content="Login" />
+                <RadioButton Name="RequestLeave" Content="Request Leave" />
+                <RadioButton Name="PendingVacay" Content="Pending Vacation" />
+                <RadioButton Name="UserMng" Content="User Mng"/>
+            </StackPanel>
+
             <StackPanel Orientation="Horizontal" >
-                <Label Content="Username" Width="100" Margin="10" ></Label>
-                <TextBox Text="{Binding Username}" Width="100" Height="20" Margin="10"></TextBox>
+                <Label Name="UsernameLbl" Content="Username" Width="100" Margin="10" ></Label>
+                <TextBox Name="UsernameTxtbox" Text="{Binding Username}" Width="100" Height="20" Margin="10"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Password" Width="100" Margin="10"></Label>
-                <TextBox Text="{Binding Password}" Width="100" Height="20" Margin="10"></TextBox>
+                <Label Name="PasswordLbl" Content="Password" Width="100" Margin="10"></Label>
+                <TextBox Name="PasswordTxtBox" Text="{Binding Password}" Width="100" Height="20" Margin="10"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button Command="{Binding LoginCommand}" Content="Login" Width="70" Height="30" Margin="300,100,300,100"></Button>
+                <Button  Name="LoginBtn" Content="Login" Width="70" Height="30" Margin="300,100,300,100" Click="LoginButton_Click"></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button  Name="LogoutBtn" Content="Logout" Width="70" Height="30" Margin="300,-90,300,100" Click="LogoutButton_Click"></Button>
             </StackPanel>
         </StackPanel>
        

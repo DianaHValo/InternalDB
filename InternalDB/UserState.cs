@@ -8,7 +8,7 @@ namespace InternalDB
 {
     public enum UserState
     {
-        AuthenticationFailed,
+        NotAuthenticated,
         AdminAuthenticated,
         UserAuthenticated
     }
