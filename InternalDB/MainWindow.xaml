@@ -72,44 +72,41 @@
                 <StackPanel Orientation="Vertical" Margin="20">
                     <StackPanel Orientation="Horizontal" >
                     <Label Name="FirstNameLabel_UserMng" Content="FirstName" Width="120" Margin="5" ></Label>
-                    <TextBox Name="FirstnameTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                    <TextBox Name="FirstnameTextbox_UserMng" Text="{Binding firstName}" Width="120" Height="20" Margin="5"></TextBox>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" >
-                    <Label Name="LastNameLabel_UserMng" Content="LastName" Width="120" Margin="5" ></Label>
-                    <TextBox Name="LastnameTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                        <Label Name="LastNameLabel_UserMng" Content="LastName" Width="120" Margin="5" ></Label>
+                        <TextBox Name="LastnameTextbox_UserMng" Text="{Binding lastName}" Width="120" Height="20" Margin="5"></TextBox>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" >
-                    <Label Name="AddressLabel_UserMng" Content="Address" Width="120" Margin="5" ></Label>
-                    <TextBox Name="AddressTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                        <Label Name="AddressLabel_UserMng" Content="Address" Width="120" Margin="5" ></Label>
+                        <TextBox Name="AddressTextbox_UserMng" Text="{Binding adress}"  Width="120" Height="20" Margin="5"></TextBox>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" >
-                    <Label Name="EmailLabel_UserMng" Content="Email" Width="120" Margin="5" ></Label>
-                    <TextBox Name="EmailTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                        <Label Name="EmailLabel_UserMng" Content="Email" Width="120" Margin="5" ></Label>
+                        <TextBox Name="EmailTextbox_UserMng"  Text="{Binding email}" Width="120" Height="20" Margin="5"></TextBox>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" >
-                    <Label Name="PhoneLabel_UserMng" Content="Phone" Width="120" Margin="5" ></Label>
-                    <TextBox Name="PhoneTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                        <Label Name="PhoneLabel_UserMng" Content="Phone" Width="120" Margin="5" ></Label>
+                        <TextBox Name="PhoneTextbox_UserMng" Text="{Binding phone}"  Width="120" Height="20" Margin="5"></TextBox>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" >
-                    <Label Name="VacationDaysLabel_UserMng" Content="VacationDays" Width="120" Margin="5" ></Label>
-                    <TextBox Name="VacationDaysTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
-                </StackPanel>
+                
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="20">
                     <StackPanel Orientation="Horizontal" >
                         <Label Name="UsernameLabel_UserMng" Content="Username" Width="120" Margin="5" ></Label>
-                        <TextBox Name="UsernameTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                        <TextBox Name="UsernameTextbox_UserMng" Text="{Binding username}" Width="120" Height="20" Margin="5"></TextBox>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" >
-                    <Label Name="PasswordLabel_UserMng" Content="Password" Width="120" Margin="5" ></Label>
-                        <TextBox Name="PasswordTextbox_UserMng" Width="120" Height="20" Margin="5"></TextBox>
+                        <Label Name="PasswordLabel_UserMng"  Content="Password" Width="120" Margin="5" ></Label>
+                        <TextBox Name="PasswordTextbox_UserMng" Text="{Binding password}" Width="120" Height="20" Margin="5"></TextBox>
                 </StackPanel>
 
                     <StackPanel Orientation="Horizontal" >
@@ -118,7 +115,7 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="20">
-                        <Button Content="Add user" Width="70" Height="30" Margin="100,100,300,200"></Button>
+                        <Button Command="{Binding AddNewEmployeeCommand}" Content="Add user" Width="70" Height="30" Margin="100,100,300,200"></Button>
                     </StackPanel>
                 </StackPanel>
 
@@ -127,23 +124,14 @@
             </StackPanel>
 
             <StackPanel x:Name="DeleteUserStackContent" Orientation="Vertical">
-                <StackPanel Orientation="Horizontal" >
-                    <Label Name="FirstNameLabel_DeleteUser" Content="First Name" Width="120" Margin="5" ></Label>
-                    <TextBox Name="FirstNameTextbox_DeleteUser" Width="120" Height="20" Margin="5"></TextBox>
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal" >
-                    <Label Name="LastNameLabel_DeleteUser" Content="LastName" Width="120" Margin="5" ></Label>
-                    <TextBox Name="LastNameTextbox_DeleteUser" Width="120" Height="20" Margin="5"></TextBox>
-                </StackPanel>
 
                 <StackPanel Orientation="Horizontal" >
                     <Label Name="UsernameLabel_DeleteUser" Content="Username" Width="120" Margin="5" ></Label>
-                    <TextBox Name="UsernameTextbox_DeleteUser" Width="120" Height="20" Margin="5"></TextBox>
+                    <TextBox Name="UsernameTextbox_DeleteUser" Text="{Binding username}" Width="120" Height="20" Margin="5"></TextBox>
                 </StackPanel>
                 
                 <DockPanel  Width="260" HorizontalAlignment="Left">
-                    <Button Content="Delete User" Width="70" Height="30" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
+                    <Button Command="{Binding DeleteEmployeeCommand}"  Content="Delete User" Width="70" Height="30" HorizontalAlignment="Right"  Margin="0,10,5,0"/>
                 </DockPanel>
 
             </StackPanel>

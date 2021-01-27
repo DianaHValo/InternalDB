@@ -21,6 +21,8 @@ namespace InternalDB
     public partial class MainWindow : Window
     {
         private VMLogin loginViewModel;
+        private VMEmployee employeeVm;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -108,6 +110,7 @@ namespace InternalDB
             PendingVacayStackContent.Visibility = Visibility.Collapsed;
             UserMngStackContent.Visibility = Visibility.Collapsed;
             DeleteUserStackContent.Visibility = Visibility.Collapsed;
+            DataContext = loginViewModel;
         }
 
         private void RequestLeave_Checked(object sender, RoutedEventArgs e)
@@ -135,6 +138,15 @@ namespace InternalDB
             PendingVacayStackContent.Visibility = Visibility.Collapsed;
             UserMngStackContent.Visibility = Visibility.Visible;
             DeleteUserStackContent.Visibility = Visibility.Collapsed;
+
+            if (employeeVm != null)
+            {
+                DataContext = employeeVm;
+            }
+            else
+            {
+                DataContext = new VMEmployee();
+            }
         }
 
         private void DeleteUser_Checked(object sender, RoutedEventArgs e)
@@ -144,6 +156,14 @@ namespace InternalDB
             PendingVacayStackContent.Visibility = Visibility.Collapsed;
             UserMngStackContent.Visibility = Visibility.Collapsed;
             DeleteUserStackContent.Visibility = Visibility.Visible;
+            if (employeeVm != null)
+            {
+                DataContext = employeeVm;
+            }
+            else
+            {
+                DataContext = new VMEmployee();
+            }
         }
     }
 }

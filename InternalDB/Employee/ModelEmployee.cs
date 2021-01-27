@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace InternalDB
 {
-    class ModelEmployee
+    public class Employee
     {
-     
+        public string lastName { get; set; }
+        public string firstName { get; set; }
+        public string adress { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
+        public string vacationDays { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+
+        
     }
 }
